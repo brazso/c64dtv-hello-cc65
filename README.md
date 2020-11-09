@@ -182,7 +182,7 @@ If you do the top-level build, there will be three different X16 programs
 built:
 
 * asm/helloasm.prg - Prints "HELLO, WORLD!" using only assembly language
-* c/helloc.PRG - Prints "HELLO, WORLD!" using only C
+* c/helloc.prg - Prints "HELLO, WORLD!" using only C
 * mixed/hellomix.prg - Prints "HELLO, WORLD!" using a mix of C and assembly
 
 You can *cd* into any of these directories and run these programs with the
