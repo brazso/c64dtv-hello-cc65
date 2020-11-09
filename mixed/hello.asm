@@ -1,4 +1,4 @@
-.include "../asm/x16.inc"
+.include "../asm/c64dtv.inc"
 
 .export __hello
 
