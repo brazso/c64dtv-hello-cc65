@@ -48,13 +48,26 @@ $ cd workspace
 There, you can use git to clone this repository with the following command:
 
 ```
-$ git clone https://github.com/SlithyMatt/x16-hello-cc65.git
+$ git clone https://github.com/brazso/c64-hello-cc65.git
+```
+
+Change to the development branch, because it is not officially released yet.
+
+```
+$ git checkout develop
 ```
 
 You will also need to clone the cc65 repo:
 
 ```
 $ git clone https://github.com/cc65/cc65.git
+```
+
+Until cc65 does not contain dtv support, please clone my fork repo and change to the c64dtv_support branch:
+
+```
+$ git clone https://github.com/brazso/cc65.git
+$ git branch c64dtv_support
 ```
 
 Now, you can first test your new build environment by building cc65:
@@ -178,7 +191,7 @@ make
 
 # Running
 
-If you do the top-level build, there will be three different X16 programs
+If you do the top-level build, there will be three different C64DTV programs
 built:
 
 * asm/helloasm.prg - Prints "HELLO, WORLD!" using only assembly language
@@ -232,6 +245,3 @@ then all assembly either linked in, or inlined.
 For more information on how to write code for cc65, check out the
 [documentation](https://cc65.github.io/doc/).
 
-See video on YouTube:
-
-[![Hello, cc65!](http://img.youtube.com/vi/t0jU2MjvCM0/0.jpg)](https://youtu.be/t0jU2MjvCM0)
