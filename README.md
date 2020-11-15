@@ -228,7 +228,7 @@ Then in the emulator at the **READY.** prompts:
 
 ```
 READY.
-LOAD "HELLOASM.PRG",8,1
+LOAD "HELLOASM.PRG",8
 
 READY.
 RUN
