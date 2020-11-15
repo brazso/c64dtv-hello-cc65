@@ -1,7 +1,7 @@
 ALL_ASM = $(wildcard *.asm) $(wildcard *.inc)
 
 all: $(ALL_ASM)
-	cl65 -t cx16 -o HELLOASM.PRG -l hello.list hello.asm
+	cl65 -t c64 --cpu 6502dtv -o helloasm.prg -l hello.list hello.asm
 
 clean:
-	rm -f *.PRG *.list *.o
+	rm -f *.prg *.list *.o

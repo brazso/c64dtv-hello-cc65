@@ -1,14 +1,16 @@
-# x16-hello-cc65
-This project contains "Hello World" examples for the Commander X16
+# c64dtv-hello-cc65
+This project contains "Hello World" examples for the C64 Direct-to-TV
 using assembly and C with the cc65 toolchain. This README also serves as
 general instructions for setting up a development environment. Most of this
 only has to be done once, and then you'll be all set to build any cc65 project,
-either of your own creation or any open source one, including the Commander X16
+either of your own creation or any open source one, including the VICE x64dtv
 emulator itself!
 
 How you build your code is different depending on what platform you are running.
 At this point, Windows is supported through Cygwin, and Linux is supported with
 special instructions here for Debian/Ubuntu distributions.
+
+This project is a fork (a simple adaptation for C64DTV instead of Commander X16) of https://github.com/SlithyMatt/x16-hello-cc65 created by Matt Heffernan. A big thanks to him.
 
 # Building with Windows (Cygwin)
 
@@ -46,7 +48,7 @@ $ cd workspace
 There, you can use git to clone this repository with the following command:
 
 ```
-$ git clone https://github.com/SlithyMatt/x16-hello-cc65.git
+$ git clone https://github.com/brazso/c64-hello-cc65.git
 ```
 
 You will also need to clone the cc65 repo:
@@ -102,7 +104,7 @@ Your environment should be all set now.
 Now, just go back to the root directory of this project and run the make utility.
 
 ```
-$ cd /cygdrive/c/Users/Fred/workspace/x16-hello-cc65
+$ cd /cygdrive/c/Users/Fred/workspace/c64dtv-hello-cc65
 $ make
 ```
 
@@ -129,7 +131,7 @@ $ cd workspace
 There, you can use git to clone this repository with the following command:
 
 ```
-$ git clone https://github.com/SlithyMatt/x16-hello-cc65
+$ git clone https://github.com/brazso/c64dtv-hello-cc65
 ```
 
 You will also need to clone the cc65 repo:
@@ -157,7 +159,7 @@ To make this environment take hold, you will need to close and reopen your termi
 Then, you can go ahead and build this project using the make tool.
 
 ```
-$ cd ~/workspace/x16-hello-cc65
+$ cd ~/workspace/c64dtv-hello-cc65
 $ make
 ```
 
@@ -176,22 +178,22 @@ make
 
 # Running
 
-If you do the top-level build, there will be three different X16 programs
+If you do the top-level build, there will be three different C64DTV programs
 built:
 
-* asm/HELLOASM.PRG - Prints "HELLO, WORLD!" using only assembly language
-* c/HELLOC.PRG - Prints "HELLO, WORLD!" using only C
-* mixed/HELLOMIX.PRG - Prints "HELLO, WORLD!" using a mix of C and assembly
+* asm/helloasm.prg - Prints "HELLO, WORLD!" using only assembly language
+* c/helloc.prg - Prints "HELLO, WORLD!" using only C
+* mixed/hellomix.prg - Prints "HELLO, WORLD!" using a mix of C and assembly
 
 You can *cd* into any of these directories and run these programs with the
-X16 emulator either from the host command line, or from the BASIC prompt
+VICE x64dtv emulator either from the host command line, or from the BASIC prompt
 in the emulator.
 
 For example, here's how to run the assembly version from the host command line:
 
 ```
 $ cd asm
-$ x16emu -prg HELLOASM.PRG
+$ x64dtv -autoload helloasm.prg
 ```
 
 Then in the emulator at the **READY.** prompt:
@@ -201,19 +203,19 @@ READY.
 RUN
 ```
 
-Or, just load it from within the emulator. So first, just launch the emulator from
+Or, just load it from within the emulator. So first, just launch the emulator with -iecdevice8 parameter from
 the directory containing the program:
 
 ```
 $ cd asm
-$ x16emu
+$ x64dtv -iecdevice8
 ```
 
 Then in the emulator at the **READY.** prompts:
 
 ```
 READY.
-LOAD "HELLOASM.PRG"
+LOAD "HELLOASM.PRG",8
 
 READY.
 RUN
@@ -230,6 +232,3 @@ then all assembly either linked in, or inlined.
 For more information on how to write code for cc65, check out the
 [documentation](https://cc65.github.io/doc/).
 
-See video on YouTube:
-
-[![Hello, cc65!](http://img.youtube.com/vi/t0jU2MjvCM0/0.jpg)](https://youtu.be/t0jU2MjvCM0)

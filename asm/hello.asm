@@ -1,4 +1,5 @@
-.include "x16.inc"
+;.setcpu "6502DTV"
+.include "c64dtv.inc"
 
 .org $080D
 .segment "STARTUP"

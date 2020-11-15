@@ -55,4 +55,4 @@ dkms.conf
 *.list
 *.mmap
 *.s
-*.PRG
+*.prg
